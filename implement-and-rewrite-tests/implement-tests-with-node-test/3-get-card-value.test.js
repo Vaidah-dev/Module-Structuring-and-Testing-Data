@@ -34,11 +34,32 @@ test("Number cards return their value", () => {
 });
 
 test("Invalid cards throw an error", () => {
-  assert.throws(() => getCardValue("A"));
-  assert.throws(() => getCardValue("♠"));
-  assert.throws(() => getCardValue("11♠"));
-  assert.throws(() => getCardValue("1♠"));
-  assert.throws(() => getCardValue("hello"));
-  assert.throws(() => getCardValue(""));
-  assert.throws(() => getCardValue("A♠♠"));
+  assert.throws(
+    () => getCardValue("A"),
+    /Expected a number followed by a suit, but got "A"/
+  );
+  assert.throws(
+    () => getCardValue("♠"),
+    /Expected a number followed by a suit, but got "♠"/
+  );
+  assert.throws(
+    () => getCardValue("11♠"),
+    /Expected a number followed by a suit, but got "11♠"/
+  );
+  assert.throws(
+    () => getCardValue("1♠"),
+    /Expected a number followed by a suit, but got "1♠"/
+  );
+  assert.throws(
+    () => getCardValue("hello"),
+    /Expected a number followed by a suit, but got "hello"/
+  );
+  assert.throws(
+    () => getCardValue(""),
+    /Expected a number followed by a suit, but got ""/
+  );
+  assert.throws(
+    () => getCardValue("A♠♠"),
+    /Expected a number followed by a suit, but got "A♠♠"/
+  );
 });

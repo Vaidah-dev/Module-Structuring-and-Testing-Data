@@ -19,10 +19,22 @@ test(`Should return 10 for face cards`, () => {
 });
 
 test(`Should throw for invalid cards`, () => {
-  expect(() => getCardValue("A")).toThrow();
-  expect(() => getCardValue("♠")).toThrow();
-  expect(() => getCardValue("11♠")).toThrow();
-  expect(() => getCardValue("hello")).toThrow();
-  expect(() => getCardValue("")).toThrow();
-  expect(() => getCardValue("A♠♠")).toThrow();
+  expect(() => getCardValue("A")).toThrow(
+    /Expected a number followed by a suit, but got "A"/
+  );
+  expect(() => getCardValue("♠")).toThrow(
+    /Expected a number followed by a suit, but got "♠"/
+  );
+  expect(() => getCardValue("11♠")).toThrow(
+    /Expected a number followed by a suit, but got "11♠"/
+  );
+  expect(() => getCardValue("hello")).toThrow(
+    /Expected a number followed by a suit, but got "hello"/
+  );
+  expect(() => getCardValue("")).toThrow(
+    /Expected a number followed by a suit, but got ""/
+  );
+  expect(() => getCardValue("A♠♠")).toThrow(
+    /Expected a number followed by a suit, but got "A♠♠"/
+  );
 });
