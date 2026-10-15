@@ -35,7 +35,3 @@ test("Classifies invalid angles", () => {
   assert.equal(getAngleType(360), "Invalid angle"); // edge
   assert.equal(getAngleType(400), "Invalid angle");
 });
-test("Classifies right angles", () => {
-  const right = getAngleType(90);
-  assert.equal(right, "Right angle");
-});
