@@ -8,7 +8,7 @@ test("Improper fraction (numerator > denominator)", () => {
 });
 
 test("Zero cases", () => {
-  assert.equal(isProperFraction(0, 1), true);
+  assert.equal(isProperFraction(0, 1), false);
   assert.equal(isProperFraction(1, 0), false);
   assert.equal(isProperFraction(0, 0), false);
 });
@@ -18,12 +18,11 @@ test("Equal numerator and denominator", () => {
 });
 
 test("Negative cases", () => {
-  assert.equal(isProperFraction(-2, 1), true);
+  assert.equal(isProperFraction(-2, 1), false);
   assert.equal(isProperFraction(1, -2), false);
-  assert.equal(isProperFraction(-1, -2), false);
+  assert.equal(isProperFraction(-1, -2), true);
 });
 
 test("Basic proper fraction", () => {
-  // Example: 1/2 is a proper fraction
   assert.equal(isProperFraction(1, 2), true);
 });
