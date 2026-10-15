@@ -14,3 +14,12 @@ test("should return 0 when character is not in the string", () => {
   const count = countChar(str, char);
   expect(count).toEqual(0);
 });
+
+test("should count multiple occurrences in a mixed string", () => {
+  expect(countChar("banana", "a")).toEqual(3);
+  expect(countChar("hello world", "l")).toEqual(3);
+});
+
+test("should return 0 when the string is empty", () => {
+  expect(countChar("", "a")).toEqual(0);
+});

@@ -18,3 +18,11 @@ test("should return an empty string when count is 0", () => {
 test("should throw an error for negative counts", () => {
   expect(() => repeatStr("hello", -1)).toThrow();
 });
+
+test("should handle an empty string", () => {
+  expect(repeatStr("", 3)).toEqual("");
+});
+
+test("should handle a single-character string", () => {
+  expect(repeatStr("a", 3)).toEqual("aaa");
+});
